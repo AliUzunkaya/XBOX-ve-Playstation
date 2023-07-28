@@ -1,0 +1,50 @@
+public class Computer {
+    private GameController controller;
+    private boolean isOpen;
+
+    public Computer() {
+        isOpen = false;
+    }
+
+    public void open() {
+        if (isOpen) {
+            throw new IllegalStateException("Computer already open.");
+        }
+
+        isOpen = true;
+        System.out.println("Computer açıldı.");
+    }
+
+    public void shutdown() {
+        if (!isOpen) {
+            throw new IllegalStateException("Computer already closed.");
+        }
+
+        isOpen = false;
+        System.out.println("Computer kapandı.");
+    }
+
+    public void addController(GameController controller) {
+        if (this.controller != null) {
+            throw new IllegalStateException("Computer already has a controller.");
+        }
+
+        this.controller = controller;
+    }
+
+    public void playGame() {
+        if (controller == null) {
+            throw new IllegalStateException("Computer has no controller.");
+        }
+
+        System.out.println("Oyun başladı.");
+        controller.pressButton("A");
+        controller.releaseButton("A");
+        controller.pressButton("B");
+        controller.releaseButton("B");
+        controller.pressButton("X");
+        controller.releaseButton("X");
+        controller.pressButton("Y");
+        controller.releaseButton("Y");
+    }
+}

@@ -1,0 +1,5 @@
+public interface GameController {
+    void pressButton(String button);
+
+    void releaseButton(String button);
+}

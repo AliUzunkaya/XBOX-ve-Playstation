@@ -1,0 +1,11 @@
+public class Xbox implements GameController {
+    @Override
+    public void pressButton(String button) {
+        System.out.println("Xbox'ta " + button + " tuşu basıldı.");
+    }
+
+    @Override
+    public void releaseButton(String button) {
+        System.out.println("Xbox'ta " + button + " tuşu bırakıldı.");
+    }
+}

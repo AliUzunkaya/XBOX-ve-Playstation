@@ -1,0 +1,27 @@
+public class Mainmain {
+    public static void main(String[] args) {
+        Computer computer = new Computer();
+
+        // Xbox cihazını açma ve kontrolcü ekleme
+        Xbox xbox = new Xbox();
+        computer.open();
+        computer.addController(xbox);
+
+        // Oyun başlatma
+        computer.playGame();
+
+        // Xbox cihazını kapama
+        computer.shutdown();
+
+        // Playstation cihazını açma ve kontrolcü ekleme
+        Playstation playstation = new Playstation();
+        computer.open();
+        computer.addController(playstation);
+
+        // Oyun başlatma
+        computer.playGame();
+
+        // Playstation cihazını kapama
+        computer.shutdown();
+    }
+}
